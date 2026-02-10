@@ -1,5 +1,5 @@
-import os
 import sys
+import os
 import torch
 import matplotlib.pyplot as plt
 import numpy as np
@@ -46,7 +46,6 @@ except ImportError as e:
     print(f"错误: 无法导入项目模块 - {e}")
     exit(1)
 
-import os
 data_file = "data/scicp_al_sample.csv"
 if not os.path.exists(data_file):
     print(f"错误: 数据文件 {data_file} 不存在")
