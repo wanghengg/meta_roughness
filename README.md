@@ -41,14 +41,29 @@ meta_roughness/
 ├── models/                  # 模型定义文件
 │   └── maml_model.py       # MAML模型实现
 ├── utils/                   # 工具函数
-│   └── data_utils.py       # 数据处理工具
-├── train.py                # 模型训练脚本
-├── test.py                 # 模型测试脚本
-├── analyze_data.py         # 数据分析脚本
-├── inner_loop.py           # 内循环更新逻辑
+│   └── task_sampler.py     # 任务采样器
+├── scripts/                 # 执行脚本目录
+│   ├── train.py            # 模型训练脚本
+│   ├── test.py             # 模型测试脚本
+│   ├── analyze_data.py     # 数据分析脚本
+│   ├── generate_maml_diagrams.py # MAML原理图生成脚本
+│   └── inner_loop.py       # 内循环更新逻辑
+├── outputs/                 # 输出文件目录
+│   ├── charts/             # 可视化图表
+│   │   ├── prediction_analysis.png     # 预测分析图
+│   │   ├── correlation_matrix.png      # 相关性矩阵图
+│   │   ├── feature_distributions.png   # 特征分布图
+│   │   ├── ra_distribution.png         # Ra分布图
+│   │   ├── training_loss_curve.png     # 训练损失曲线
+│   │   ├── maml_framework.png          # MAML框架图
+│   │   ├── maml_gradients.png          # MAML梯度图
+│   │   ├── maml_application.png        # MAML应用场景图
+│   │   └── math_symbols_test.png       # 数学符号测试图
+│   └── models/             # 模型文件
+│       └── maml_model.pth  # 训练好的模型权重
+├── docs/                    # 文档目录
+│   └── 金属基复合材料表面粗糙度预测研究报告.md  # 技术研究报告
 ├── config.py               # 配置参数文件
-├── generate_maml_diagrams.py # MAML原理图生成脚本
-├── maml_model.pth          # 训练好的模型权重
 ├── README.md               # 项目说明文档
 └── .gitignore              # Git忽略文件配置
 ```
@@ -81,19 +96,19 @@ pip install torch==2.2.2 pandas numpy matplotlib seaborn scikit-learn
 ### 模型训练
 
 ```bash
-python train.py
+python scripts/train.py
 ```
 
 ### 模型测试
 
 ```bash
-python test.py
+python scripts/test.py
 ```
 
 ### 数据分析
 
 ```bash
-python analyze_data.py
+python scripts/analyze_data.py
 ```
 
 ## 📈 可视化分析
@@ -105,12 +120,12 @@ python analyze_data.py
 - **MAML原理图**: 框架结构、梯度计算流程、应用场景
 
 ```bash
-python generate_maml_diagrams.py
+python scripts/generate_maml_diagrams.py
 ```
 
 ## 📖 技术文档
 
-详细的项目技术文档请参考：[金属基复合材料表面粗糙度预测研究报告.md](金属基复合材料表面粗糙度预测研究报告.md)
+详细的项目技术文档请参考：[docs/金属基复合材料表面粗糙度预测研究报告.md](docs/金属基复合材料表面粗糙度预测研究报告.md)
 
 ## 🤝 贡献指南
 

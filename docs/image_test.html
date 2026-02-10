@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>图片路径测试</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .test-image { margin: 20px 0; text-align: center; }
+        img { max-width: 100%; height: auto; border: 1px solid #ddd; }
+        .status { padding: 10px; margin: 10px 0; border-radius: 5px; }
+        .success { background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+        .error { background-color: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
+    </style>
+</head>
+<body>
+    <h1>图片路径验证测试</h1>
+    
+    <div class="test-image">
+        <h3>MAML框架原理图</h3>
+        <img src="../outputs/charts/maml_framework.png" alt="MAML框架原理图" onerror="this.parentNode.className+=' error'; this.nextSibling.innerHTML='❌ 图片加载失败'" onload="this.parentNode.className+=' success'; this.nextSibling.innerHTML='✅ 图片加载成功'">
+        <div class="status">正在加载...</div>
+    </div>
+    
+    <div class="test-image">
+        <h3>MAML梯度计算示意图</h3>
+        <img src="../outputs/charts/maml_gradients.png" alt="MAML梯度计算示意图" onerror="this.parentNode.className+=' error'; this.nextSibling.innerHTML='❌ 图片加载失败'" onload="this.parentNode.className+=' success'; this.nextSibling.innerHTML='✅ 图片加载成功'">
+        <div class="status">正在加载...</div>
+    </div>
+    
+    <div class="test-image">
+        <h3>MAML应用场景图</h3>
+        <img src="../outputs/charts/maml_application.png" alt="MAML应用场景图" onerror="this.parentNode.className+=' error'; this.nextSibling.innerHTML='❌ 图片加载失败'" onload="this.parentNode.className+=' success'; this.nextSibling.innerHTML='✅ 图片加载成功'">
+        <div class="status">正在加载...</div>
+    </div>
+    
+    <div class="test-image">
+        <h3>预测性能综合分析图</h3>
+        <img src="../outputs/charts/prediction_analysis.png" alt="预测性能综合分析图" onerror="this.parentNode.className+=' error'; this.nextSibling.innerHTML='❌ 图片加载失败'" onload="this.parentNode.className+=' success'; this.nextSibling.innerHTML='✅ 图片加载成功'">
+        <div class="status">正在加载...</div>
+    </div>
+    
+    <script>
+        // 页面加载完成后检查所有图片
+        window.addEventListener('load', function() {
+            const images = document.querySelectorAll('img');
+            let loadedCount = 0;
+            let totalCount = images.length;
+            
+            images.forEach(img => {
+                if (img.complete) {
+                    loadedCount++;
+                }
+            });
+            
+            console.log(`图片加载状态: ${loadedCount}/${totalCount} 成功`);
+        });
+    </script>
+</body>
+</html>

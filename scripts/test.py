@@ -1,9 +1,16 @@
+import os
+import sys
 import torch
 import matplotlib.pyplot as plt
 import numpy as np
+
+# 添加项目根目录到Python路径
+project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, project_root)
+
 from models.maml_model import RoughnessNet
 from utils.task_sampler import load_dataset, build_tasks, compute_global_stats
-from inner_loop import inner_update
+from scripts.inner_loop import inner_update
 from config import *
 
 # 设置matplotlib支持中文显示
